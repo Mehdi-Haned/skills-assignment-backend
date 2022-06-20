@@ -39,7 +39,7 @@ const data = {
             id: 6,
             name: '16 oz rubber mallet',
             cost: 6.98,
-            stock: 0,
+            stock: 1,
             brand: 'Work Pro'
         },
         {
