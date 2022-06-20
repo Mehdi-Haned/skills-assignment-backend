@@ -49,6 +49,7 @@ app.get("/api/v1/customers/:id", (request, response) => {
   return response.json(customer);
 });
 
+// update check backend
 
 app.listen(PORT, () => {
   console.log(`Hello World, I'm listening on localhost${PORT}`)
