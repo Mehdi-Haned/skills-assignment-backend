@@ -2,7 +2,7 @@ import express from "express";
 import data from "../data/data"
 import bodyParser from "body-parser";
 import cors from "cors";
-import * as utilities from "../utils/functions";
+import { isInvalidId } from "../utils/functions";
 
 const app = express(); // creating an Express app
 const { PORT = 4000 } = process.env;
@@ -20,7 +20,7 @@ app.get("/api/v1/customers", (request, response) => {
 });
 
 app.get("/api/v1/items/:id", (request, response) => {
-  if (utilities.isInvalidId(request.params.id)) {
+  if (isInvalidId(request.params.id)) {
     console.log("Invalid ID");
     return response.status(400).json({ error: "Invalid id." });
   };
@@ -35,7 +35,7 @@ app.get("/api/v1/items/:id", (request, response) => {
 });
 
 app.get("/api/v1/customers/:id", (request, response) => {
-  if (utilities.isInvalidId(request.params.id)) {
+  if (isInvalidId(request.params.id)) {
     console.log("Invalid ID");
     return response.status(400).json({ error: "Invalid id." });
   };
